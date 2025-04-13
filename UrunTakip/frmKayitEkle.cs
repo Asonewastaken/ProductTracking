@@ -28,7 +28,9 @@ namespace UrunTakip
             komut.Parameters.AddWithValue("@p2", txtSifre.Text);
             komut.ExecuteNonQuery();
             baglanti.Close();
-            MessageBox.Show("Kullanıcı Başarıyla Eklendi.");          
+            MessageBox.Show("Kullanıcı Başarıyla Eklendi.");  
+            
+            
         }
     }
 }

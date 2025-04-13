@@ -33,29 +33,35 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtSatisFiyat = new System.Windows.Forms.TextBox();
+            this.txtSatisFiyatAs = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtAlisFiyat = new System.Windows.Forms.TextBox();
+            this.txtAlisFiyatAs = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtUrunAdi = new System.Windows.Forms.TextBox();
+            this.txtUrunAdiAs = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtUrunId = new System.Windows.Forms.TextBox();
+            this.txtUrunIdAs = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnListele = new System.Windows.Forms.Button();
-            this.btnAra = new System.Windows.Forms.Button();
-            this.btnGüncelle = new System.Windows.Forms.Button();
-            this.btnSil = new System.Windows.Forms.Button();
-            this.btnKaydet = new System.Windows.Forms.Button();
+            this.btnListeleAs = new System.Windows.Forms.Button();
+            this.btnGüncelleAs = new System.Windows.Forms.Button();
+            this.btnSilAs = new System.Windows.Forms.Button();
+            this.btnKaydetAs = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.ürünlerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.istatistiklerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.kategorilerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.girişYapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kayıtEkleToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 74);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -69,16 +75,16 @@
             this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtSatisFiyat);
+            this.groupBox1.Controls.Add(this.txtSatisFiyatAs);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtAlisFiyat);
+            this.groupBox1.Controls.Add(this.txtAlisFiyatAs);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtUrunAdi);
+            this.groupBox1.Controls.Add(this.txtUrunAdiAs);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtUrunId);
+            this.groupBox1.Controls.Add(this.txtUrunIdAs);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(911, 21);
+            this.groupBox1.Location = new System.Drawing.Point(911, 83);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(270, 240);
             this.groupBox1.TabIndex = 2;
@@ -110,12 +116,12 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "Kategori:";
             // 
-            // txtSatisFiyat
+            // txtSatisFiyatAs
             // 
-            this.txtSatisFiyat.Location = new System.Drawing.Point(98, 174);
-            this.txtSatisFiyat.Name = "txtSatisFiyat";
-            this.txtSatisFiyat.Size = new System.Drawing.Size(166, 22);
-            this.txtSatisFiyat.TabIndex = 9;
+            this.txtSatisFiyatAs.Location = new System.Drawing.Point(98, 174);
+            this.txtSatisFiyatAs.Name = "txtSatisFiyatAs";
+            this.txtSatisFiyatAs.Size = new System.Drawing.Size(166, 22);
+            this.txtSatisFiyatAs.TabIndex = 9;
             // 
             // label5
             // 
@@ -126,12 +132,12 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Satış Fiyatı:";
             // 
-            // txtAlisFiyat
+            // txtAlisFiyatAs
             // 
-            this.txtAlisFiyat.Location = new System.Drawing.Point(98, 142);
-            this.txtAlisFiyat.Name = "txtAlisFiyat";
-            this.txtAlisFiyat.Size = new System.Drawing.Size(166, 22);
-            this.txtAlisFiyat.TabIndex = 7;
+            this.txtAlisFiyatAs.Location = new System.Drawing.Point(98, 142);
+            this.txtAlisFiyatAs.Name = "txtAlisFiyatAs";
+            this.txtAlisFiyatAs.Size = new System.Drawing.Size(166, 22);
+            this.txtAlisFiyatAs.TabIndex = 7;
             // 
             // label4
             // 
@@ -151,12 +157,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Stok";
             // 
-            // txtUrunAdi
+            // txtUrunAdiAs
             // 
-            this.txtUrunAdi.Location = new System.Drawing.Point(98, 69);
-            this.txtUrunAdi.Name = "txtUrunAdi";
-            this.txtUrunAdi.Size = new System.Drawing.Size(166, 22);
-            this.txtUrunAdi.TabIndex = 3;
+            this.txtUrunAdiAs.Location = new System.Drawing.Point(98, 69);
+            this.txtUrunAdiAs.Name = "txtUrunAdiAs";
+            this.txtUrunAdiAs.Size = new System.Drawing.Size(166, 22);
+            this.txtUrunAdiAs.TabIndex = 3;
             // 
             // label2
             // 
@@ -167,12 +173,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Ürün Adı:";
             // 
-            // txtUrunId
+            // txtUrunIdAs
             // 
-            this.txtUrunId.Location = new System.Drawing.Point(98, 38);
-            this.txtUrunId.Name = "txtUrunId";
-            this.txtUrunId.Size = new System.Drawing.Size(166, 22);
-            this.txtUrunId.TabIndex = 1;
+            this.txtUrunIdAs.Location = new System.Drawing.Point(98, 38);
+            this.txtUrunIdAs.Name = "txtUrunIdAs";
+            this.txtUrunIdAs.Size = new System.Drawing.Size(166, 22);
+            this.txtUrunIdAs.TabIndex = 1;
             // 
             // label1
             // 
@@ -183,75 +189,121 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Ürün ID:";
             // 
-            // btnListele
+            // btnListeleAs
             // 
-            this.btnListele.Location = new System.Drawing.Point(1052, 267);
-            this.btnListele.Name = "btnListele";
-            this.btnListele.Size = new System.Drawing.Size(123, 23);
-            this.btnListele.TabIndex = 3;
-            this.btnListele.Text = "Listele";
-            this.btnListele.UseVisualStyleBackColor = true;
-            this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
+            this.btnListeleAs.Location = new System.Drawing.Point(1052, 329);
+            this.btnListeleAs.Name = "btnListeleAs";
+            this.btnListeleAs.Size = new System.Drawing.Size(123, 23);
+            this.btnListeleAs.TabIndex = 3;
+            this.btnListeleAs.Text = "Listele";
+            this.btnListeleAs.UseVisualStyleBackColor = true;
+            this.btnListeleAs.Click += new System.EventHandler(this.btnListeleAs_Click);
             // 
-            // btnAra
+            // btnGüncelleAs
             // 
-            this.btnAra.Location = new System.Drawing.Point(1052, 354);
-            this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(123, 23);
-            this.btnAra.TabIndex = 10;
-            this.btnAra.Text = "Ara";
-            this.btnAra.UseVisualStyleBackColor = true;
+            this.btnGüncelleAs.Location = new System.Drawing.Point(1052, 387);
+            this.btnGüncelleAs.Name = "btnGüncelleAs";
+            this.btnGüncelleAs.Size = new System.Drawing.Size(123, 23);
+            this.btnGüncelleAs.TabIndex = 9;
+            this.btnGüncelleAs.Text = "Güncelle";
+            this.btnGüncelleAs.UseVisualStyleBackColor = true;
+            this.btnGüncelleAs.Click += new System.EventHandler(this.btnGüncelleAs_Click);
             // 
-            // btnGüncelle
+            // btnSilAs
             // 
-            this.btnGüncelle.Location = new System.Drawing.Point(1052, 325);
-            this.btnGüncelle.Name = "btnGüncelle";
-            this.btnGüncelle.Size = new System.Drawing.Size(123, 23);
-            this.btnGüncelle.TabIndex = 9;
-            this.btnGüncelle.Text = "Güncelle";
-            this.btnGüncelle.UseVisualStyleBackColor = true;
-            this.btnGüncelle.Click += new System.EventHandler(this.btnGüncelle_Click);
+            this.btnSilAs.Location = new System.Drawing.Point(1052, 416);
+            this.btnSilAs.Name = "btnSilAs";
+            this.btnSilAs.Size = new System.Drawing.Size(123, 23);
+            this.btnSilAs.TabIndex = 8;
+            this.btnSilAs.Text = "Sil";
+            this.btnSilAs.UseVisualStyleBackColor = true;
+            this.btnSilAs.Click += new System.EventHandler(this.btnSilAs_Click);
             // 
-            // btnSil
+            // btnKaydetAs
             // 
-            this.btnSil.Location = new System.Drawing.Point(1052, 383);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(123, 23);
-            this.btnSil.TabIndex = 8;
-            this.btnSil.Text = "Sil";
-            this.btnSil.UseVisualStyleBackColor = true;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            this.btnKaydetAs.Location = new System.Drawing.Point(1052, 358);
+            this.btnKaydetAs.Name = "btnKaydetAs";
+            this.btnKaydetAs.Size = new System.Drawing.Size(123, 23);
+            this.btnKaydetAs.TabIndex = 7;
+            this.btnKaydetAs.Text = "Kaydet";
+            this.btnKaydetAs.UseVisualStyleBackColor = true;
+            this.btnKaydetAs.Click += new System.EventHandler(this.btnKaydetAs_Click);
             // 
-            // btnKaydet
+            // menuStrip1
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(1052, 296);
-            this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(123, 23);
-            this.btnKaydet.TabIndex = 7;
-            this.btnKaydet.Text = "Kaydet";
-            this.btnKaydet.UseVisualStyleBackColor = true;
-            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ürünlerToolStripMenuItem1,
+            this.istatistiklerToolStripMenuItem1,
+            this.kategorilerToolStripMenuItem,
+            this.girişYapToolStripMenuItem,
+            this.kayıtEkleToolStripMenuItem3});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1224, 28);
+            this.menuStrip1.TabIndex = 12;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // ürünlerToolStripMenuItem1
+            // 
+            this.ürünlerToolStripMenuItem1.Name = "ürünlerToolStripMenuItem1";
+            this.ürünlerToolStripMenuItem1.Size = new System.Drawing.Size(71, 24);
+            this.ürünlerToolStripMenuItem1.Text = "Ürünler";
+            this.ürünlerToolStripMenuItem1.Click += new System.EventHandler(this.ürünlerAsToolStripMenuItem1_Click);
+            // 
+            // istatistiklerToolStripMenuItem1
+            // 
+            this.istatistiklerToolStripMenuItem1.Name = "istatistiklerToolStripMenuItem1";
+            this.istatistiklerToolStripMenuItem1.Size = new System.Drawing.Size(94, 24);
+            this.istatistiklerToolStripMenuItem1.Text = "İstatistikler";
+            this.istatistiklerToolStripMenuItem1.Click += new System.EventHandler(this.istatistiklerAsToolStripMenuItem1_Click);
+            // 
+            // kategorilerToolStripMenuItem
+            // 
+            this.kategorilerToolStripMenuItem.Name = "kategorilerToolStripMenuItem";
+            this.kategorilerToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
+            this.kategorilerToolStripMenuItem.Text = "Kategoriler";
+            this.kategorilerToolStripMenuItem.Click += new System.EventHandler(this.kategorilerAsToolStripMenuItes_Click);
+            // 
+            // girişYapToolStripMenuItem
+            // 
+            this.girişYapToolStripMenuItem.Name = "girişYapToolStripMenuItem";
+            this.girişYapToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.girişYapToolStripMenuItem.Text = "Giriş Yap";
+            this.girişYapToolStripMenuItem.Click += new System.EventHandler(this.girişYapAsToolStripMenuItem_Click);
+            // 
+            // kayıtEkleToolStripMenuItem3
+            // 
+            this.kayıtEkleToolStripMenuItem3.Name = "kayıtEkleToolStripMenuItem3";
+            this.kayıtEkleToolStripMenuItem3.Size = new System.Drawing.Size(87, 24);
+            this.kayıtEkleToolStripMenuItem3.Text = "Kayıt Ekle";
+            this.kayıtEkleToolStripMenuItem3.Click += new System.EventHandler(this.kayıtEkleAsToolStripMenuItem3_Click);
             // 
             // frmUrun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1193, 588);
-            this.Controls.Add(this.btnAra);
-            this.Controls.Add(this.btnGüncelle);
-            this.Controls.Add(this.btnSil);
-            this.Controls.Add(this.btnKaydet);
-            this.Controls.Add(this.btnListele);
+            this.ClientSize = new System.Drawing.Size(1224, 629);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.btnGüncelleAs);
+            this.Controls.Add(this.btnSilAs);
+            this.Controls.Add(this.btnKaydetAs);
+            this.Controls.Add(this.btnListeleAs);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmUrun";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUrun";
             this.Load += new System.EventHandler(this.frmUrun_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -259,22 +311,27 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtUrunId;
+        private System.Windows.Forms.TextBox txtUrunIdAs;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnListele;
-        private System.Windows.Forms.TextBox txtSatisFiyat;
+        private System.Windows.Forms.Button btnListeleAs;
+        private System.Windows.Forms.TextBox txtSatisFiyatAs;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtAlisFiyat;
+        private System.Windows.Forms.TextBox txtAlisFiyatAs;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtUrunAdi;
+        private System.Windows.Forms.TextBox txtUrunAdiAs;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnAra;
-        private System.Windows.Forms.Button btnGüncelle;
-        private System.Windows.Forms.Button btnSil;
-        private System.Windows.Forms.Button btnKaydet;
+        private System.Windows.Forms.Button btnGüncelleAs;
+        private System.Windows.Forms.Button btnSilAs;
+        private System.Windows.Forms.Button btnKaydetAs;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ürünlerToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem istatistiklerToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem kategorilerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem girişYapToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kayıtEkleToolStripMenuItem3;
     }
 }

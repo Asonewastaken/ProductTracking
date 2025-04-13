@@ -24,8 +24,8 @@ namespace UrunTakip
         {
             baglanti.Open();
             SqlCommand komut = new SqlCommand("Select * from TblAdmin where KullaniciAdi = @p1 and Sifre = @p2", baglanti);
-            komut.Parameters.AddWithValue("@p1", txtKullaniciAdi.Text);
-            komut.Parameters.AddWithValue("@p2", txtSifre.Text);
+            komut.Parameters.AddWithValue("@p1", txtKullaniciAdiAs.Text);
+            komut.Parameters.AddWithValue("@p2", txtSifreAs.Text);
             SqlDataReader dr = komut.ExecuteReader();
             if (dr.Read())
             {
@@ -44,6 +44,21 @@ namespace UrunTakip
         {
             frmKayitEkle frm = new frmKayitEkle();
             frm.ShowDialog();
+        }
+
+        //Keydown event'i kullanıcı kolaylığını sağlamak içindir.
+        //Buradaki amaç kullanıcı textbox'lara veri girişi yaptıktan sonra enter'a bastığı gibi diğer textbox'a veya
+        //buton'a kolaylıkla geçiş yapmasıdır.
+        private void txtKullaniciAdi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                txtSifreAs.Focus();
+        }
+
+        private void txtSifre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnGirisYap_Click(this, EventArgs.Empty);
         }
     }
 }

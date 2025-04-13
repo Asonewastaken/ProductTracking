@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace UrunTakip
 {
-    public partial class Form1 : Form
+    public partial class frmKategoriler : Form
     {
-        public Form1()
+        public frmKategoriler()
         {
             InitializeComponent();
         }
@@ -32,7 +32,7 @@ namespace UrunTakip
             veriGetir();
         }
 
-        private void btnListele_Click(object sender, EventArgs e)
+        private void btnListeleAs_Click(object sender, EventArgs e)
         {
             SqlCommand komut = new SqlCommand("Select * from TblKategori", baglanti);
             SqlDataAdapter da = new SqlDataAdapter(komut);
@@ -41,45 +41,48 @@ namespace UrunTakip
                 dataGridView1.DataSource = dt;
         }
 
-        private void btnKaydet_Click(object sender, EventArgs e)
+        private void btnKaydetAs_Click(object sender, EventArgs e)
         {
             baglanti.Open();
             SqlCommand komut = new SqlCommand("insert into TblKategori (Ad) Values (@p1)", baglanti);
-            komut.Parameters.AddWithValue("@p1",txtKategoriAd.Text);
+            komut.Parameters.AddWithValue("@p1",txtKategoriAdAs.Text);
             komut.ExecuteNonQuery();
             baglanti.Close();
             MessageBox.Show("Kategoriniz başarıyla eklendi.");
             baglanti.Open();
             veriGetir();
+
+            txtIDAs.Text = "";
+            txtKategoriAdAs.Text = "";
         }
 
-        private void btnGüncelle_Click(object sender, EventArgs e)
+        private void btnGüncelleAs_Click(object sender, EventArgs e)
         {
             baglanti.Open();
             SqlCommand komut = new SqlCommand("Update TblKategori Set Ad = @p1 where ID=@p2", baglanti);
-            komut.Parameters.AddWithValue("@p1", txtKategoriAd.Text);
-            komut.Parameters.AddWithValue("@p2", txtID.Text);
+            komut.Parameters.AddWithValue("@p1", txtKategoriAdAs.Text);
+            komut.Parameters.AddWithValue("@p2", txtIDAs.Text);
             komut.ExecuteNonQuery();
             baglanti.Close();
             MessageBox.Show("Kategori başarıyla güncellendi.");
             veriGetir();
         }
 
-        private void btnSil_Click(object sender, EventArgs e)
+        private void btnSilAs_Click(object sender, EventArgs e)
         {
             baglanti.Open();
             SqlCommand komut = new SqlCommand("Delete from TblKategori where ID = @p1", baglanti);
-            komut.Parameters.AddWithValue("@p1", txtID.Text);
+            komut.Parameters.AddWithValue("@p1", txtIDAs.Text);
             komut.ExecuteNonQuery(); // Sorguyu çalıştırır.
             baglanti.Close();
             MessageBox.Show("Kategoriniz başarıyla silindi.");
             veriGetir() ;
         }
 
-        private void btnAra_Click(object sender, EventArgs e)
+        private void btnAraAs_Click(object sender, EventArgs e)
         {
             SqlCommand komut = new SqlCommand("Select * from TblKategori where Ad = @p1", baglanti);
-            komut.Parameters.AddWithValue("@p1",txtKategoriAd.Text);
+            komut.Parameters.AddWithValue("@p1",txtKategoriAdAs.Text);
             SqlDataAdapter da = new SqlDataAdapter(komut);
             DataTable dt = new DataTable();
             da.Fill(dt);

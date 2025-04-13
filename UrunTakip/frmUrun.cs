@@ -46,7 +46,7 @@ namespace UrunTakip
             comboBox1.DataSource = dt;
         }
 
-        private void btnListele_Click(object sender, EventArgs e)
+        private void btnListeleAs_Click(object sender, EventArgs e)
         {
             SqlCommand komut = new SqlCommand("Select\tUrunId,UrunAd, Stok, AlisFiyat, SatisFiyat, Ad, Kategori from TblUrunler\r\nInner join TblKategori\r\nOn TblUrunler.Kategori = TblKategori.ID", baglanti);
             SqlDataAdapter da = new SqlDataAdapter(komut);
@@ -59,27 +59,30 @@ namespace UrunTakip
 
         }
 
-        private void btnKaydet_Click(object sender, EventArgs e)
+        private void btnKaydetAs_Click(object sender, EventArgs e)
         {
             baglanti.Open();
             SqlCommand komut = new SqlCommand("Insert into TblUrunler (UrunAd, Stok, AlisFiyat, SatisFiyat, Kategori)" +
                 "values (@p1, @p2, @p3, @p4, @p5)", baglanti);
-            komut.Parameters.AddWithValue("@p1", txtUrunAdi.Text);
+            komut.Parameters.AddWithValue("@p1", txtUrunAdiAs.Text);
             komut.Parameters.AddWithValue("@p2", numericUpDown1.Value);
-            komut.Parameters.AddWithValue("@p3", txtAlisFiyat.Text);
-            komut.Parameters.AddWithValue("@p4", txtSatisFiyat.Text);
+            komut.Parameters.AddWithValue("@p3", txtAlisFiyatAs.Text);
+            komut.Parameters.AddWithValue("@p4", txtSatisFiyatAs.Text);
             komut.Parameters.AddWithValue("@p5", comboBox1.SelectedValue);
             komut.ExecuteNonQuery();
             baglanti.Close();
             MessageBox.Show("Ürün kaydı başarıyla gerçekleşti.");
             veriGetir();
+
+            txtUrunIdAs.Text = "";
+            txtUrunIdAs.Text = "";
         }
 
-        private void btnSil_Click(object sender, EventArgs e)
+        private void btnSilAs_Click(object sender, EventArgs e)
         {
             baglanti.Open();
             SqlCommand komut = new SqlCommand("Delete from TblUrunler where urunId = @p1", baglanti);
-            komut.Parameters.AddWithValue("@p1", txtUrunId.Text);
+            komut.Parameters.AddWithValue("@p1", txtUrunIdAs.Text);
             komut.ExecuteNonQuery();
             baglanti.Close();
             MessageBox.Show("Ürün başarıyla silindi");
@@ -92,30 +95,64 @@ namespace UrunTakip
         // Combobox'ta ise değer ataması SelectedValue ile yapıldığından atamamı o şekilde yaptım.
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtUrunId.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtUrunAdi.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtUrunIdAs.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtUrunAdiAs.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             numericUpDown1.Value = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
-            txtAlisFiyat.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtSatisFiyat.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txtAlisFiyatAs.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtSatisFiyatAs.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
             comboBox1.SelectedValue = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
 
         }
 
-        private void btnGüncelle_Click(object sender, EventArgs e)
+        private void btnGüncelleAs_Click(object sender, EventArgs e)
         {
             baglanti.Open();
             SqlCommand komut = new SqlCommand("Update TblUrunler Set UrunAd = @p1, Stok = @p2, AlisFiyat = @p3," +
                 "SatisFiyat = @p4, Kategori = @p5 where UrunId = @p6", baglanti);
-            komut.Parameters.AddWithValue("@p1", txtUrunAdi.Text);
+            komut.Parameters.AddWithValue("@p1", txtUrunAdiAs.Text);
             komut.Parameters.AddWithValue("@p2", numericUpDown1.Value);
-            komut.Parameters.AddWithValue("@p3", decimal.Parse(txtAlisFiyat.Text));
-            komut.Parameters.AddWithValue("@p4", decimal.Parse(txtSatisFiyat.Text));
+            komut.Parameters.AddWithValue("@p3", decimal.Parse(txtAlisFiyatAs.Text));
+            komut.Parameters.AddWithValue("@p4", decimal.Parse(txtSatisFiyatAs.Text));
             komut.Parameters.AddWithValue("@p5", comboBox1.SelectedValue);
-            komut.Parameters.AddWithValue("@p6", txtUrunId.Text);
+            komut.Parameters.AddWithValue("@p6", txtUrunIdAs.Text);
             komut.ExecuteNonQuery();
             baglanti.Close();
             MessageBox.Show("Ürün başarıyla güncellendi.");
             veriGetir();
         }
+
+        //Altta görmüş olduğunuz kod blokları menustrip aracında ismi yazan forma tıklandığında o formun karşınıza
+        //gelmesini sağlar.
+        private void ürünlerAsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+           frmUrun frmUrun = new frmUrun();
+            frmUrun.ShowDialog();
+        }
+
+        private void istatistiklerAsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmIstatistik frmIstatistik = new frmIstatistik();
+            frmIstatistik.ShowDialog();
+        }
+
+        private void kategorilerAsToolStripMenuItes_Click(object sender, EventArgs e)
+        {
+            frmKategoriler frmKategoriler = new frmKategoriler();
+            frmKategoriler.ShowDialog();
+        }
+
+        private void girişYapAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmin frmAdmin = new frmAdmin();
+            frmAdmin.ShowDialog();
+        }
+
+        private void kayıtEkleAsToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            frmKayitEkle frmKayitEkle = new frmKayitEkle();
+            frmKayitEkle.ShowDialog();
+        }
+
+       
     }
 }
